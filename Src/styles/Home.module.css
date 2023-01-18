@@ -1,0 +1,129 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh !important;
+  padding: 4rem 0 !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.footer {
+  display: flex !important;
+  flex: 1 !important;
+  padding: 2rem 0 !important;
+  border-top: 1px solid #eaeaea !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.footer a {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-grow: 1 !important;
+}
+
+.title a {
+  color: #0070f3 !important;
+  text-decoration: none !important;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline !important;
+}
+
+.title {
+  margin: 0 !important;
+  line-height: 1.15 !important;
+  font-size: 4rem !important;
+}
+
+.title,
+.description {
+  text-align: center !important;
+}
+
+.description {
+  margin: 4rem 0 !important;
+  line-height: 1.5 !important;
+  font-size: 1.5rem !important;
+}
+
+.code {
+  background: #fafafa !important;
+  border-radius: 5px !important;
+  padding: 0.75rem !important;
+  font-size: 1.1rem !important;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace !important;
+}
+
+.grid {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  max-width: 800px !important;
+}
+
+.card {
+  margin: 1rem !important;
+  padding: 1.5rem !important;
+  text-align: left !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  border: 1px solid #eaeaea !important;
+  border-radius: 10px !important;
+  transition: color 0.15s ease, border-color 0.15s ease !important;
+  max-width: 300px !important;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3 !important;
+  border-color: #0070f3 !important;
+}
+
+.card h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}

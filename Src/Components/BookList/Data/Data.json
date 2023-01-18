@@ -1,0 +1,20 @@
+{
+    "BookList": [
+        {
+            "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000, "Src": "bookimg.png"},
+        {
+            "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000, "Src": "bookimg.png"},
+        {
+            "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000, "Src": "bookimg.png"},
+        {
+            "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000, "Src": "bookimg.png"},
+            {
+                "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000},
+            {
+                "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000},
+            {
+                "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000},
+            {
+                "Title": "Harry Potter", "Author": "J. K. Rowling", "Rating": 9.5, "Description": "Harry Potter young wizard starting studying in wizard`s school Hogwarts", "Downloads": 1250, "TopRating": 1, "Genre": "Fantasy", "Views": 5000}
+    ]
+}

@@ -1,0 +1,13 @@
+.container{
+    background-color: var(--white);
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 20%);
+    color: #666666;
+
+    padding: 10px;
+}
+
+.book{
+    margin-left: 35%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
