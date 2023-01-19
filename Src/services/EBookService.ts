@@ -1,4 +1,4 @@
-import { IEBook } from './../store/models/IEBook';
+import { IEBook } from '../store/models/IEBook';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const API = createApi({
@@ -12,7 +12,11 @@ export const API = createApi({
                 params: {
                     _limit: limit,
                     _offset: offset
-                }
+                },
+                credentials:"include",
+                crossDomain: true,
+                xhrFields: {withCredentials: true}
+
             }),
             providesTags: (result) => ['EBook']
         }),

@@ -1,4 +1,4 @@
-import { IUser } from './../store/models/IUser';
+import { IUser } from '../store/models/IUser';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { ITopEBook } from '../store/models/ITopEBook'
 import { API } from './EBookService'
@@ -14,14 +14,18 @@ export const authorizationAPI = API.injectEndpoints({
                 method: 'POST',
                 body: user
             })
+            
         }),
-        getAccessToken: build.query<IUser, {login: string, password: string} >({
+        getAccessToken: build.mutation<IUser, {login: string, password: string} >({
             query: ({login, password}) => ({
                 url: `/api/UserAPI/user`,
                 params: {
                     password: password,
                     login: login
-                }
+                },
+                method: 'GET',
+                credentials: "include"
+
             })
         }),
         

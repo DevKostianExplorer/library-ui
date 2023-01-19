@@ -1,7 +1,7 @@
-import { ILanguage } from './../store/models/ILanguage';
-import { IPublisher } from './../store/models/IPublisher';
-import { IAuthor } from './../store/models/IAuthor';
-import { IGenre } from './../store/models/IGenre';
+import { ILanguage } from '../store/models/ILanguage';
+import { IPublisher } from '../store/models/IPublisher';
+import { IAuthor } from '../store/models/IAuthor';
+import { IGenre } from '../store/models/IGenre';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { ITopEBook } from '../store/models/ITopEBook'
 import { API } from './EBookService'
