@@ -12,18 +12,7 @@ import { SingIn } from "../SingIn/SingIn";
 
 export const Navbar = ({className, ...props}: NavbarProps) => {
 
-//     const dispatch = useDispatch();
-//     const genres = useSelector((state: any) => state.genres);
-//   useEffect(() => {
-//     fetch(`https://localhost:7109/api/EBookAPI/genre`)
-//     .then(res => res.json())
-//     .then(
-//       (result) => {
-//         dispatch(setGenres(result))
-//       }
-//       )
-    
-//   }, []);
+
     return(
         <div className= {cn(styles.navbar, className, styles.sticky)} {...props}>
             <Container fluid>

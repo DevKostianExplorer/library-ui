@@ -1,28 +1,26 @@
-import { BookListProps, Books } from "./BookList.props";
-import styles from './BookList.module.css';
+import { EBookListProps, Books } from "./EBookList.props";
+import styles from './EBookList.module.css';
 import cn from 'classnames';
 import { Container, Row, Col } from "react-grid-system";
 import { NavbarButton } from "../NavbarButton/NavbarButton";
-import { BookElement } from "../BookElement/BookElement";
+import { EBookElement } from "../EBookElement/EBookElement";
 import { Key, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 import { API } from "../../services/EBookService";
 import { IEBook } from "../../store/models/IEBook";
-import { bookAPI } from "../../services/BookService";
-import { IBook } from "../../store/models/IBook";
 
 
-export const BookList = ({className,  ...props}: BookListProps) => {
+export const EBookList = ({className,  ...props}: EBookListProps) => {
     const [page, setPage] = useState<number>(1)
-    const {data: books, error, isLoading, refetch} =  bookAPI.useFetchAllBooksQuery([page * 10, page * 10 - 10])
+    const {data: eBooks, error, isLoading, refetch} =  API.useFetchAllEBooksQuery([page * 10, page * 10 - 10])
 
     return(
         <div className= {cn(styles.booklist, className)} {...props}>
             <Container fluid>
                 <Row className={styles.heading}>
                     <Col md ={12}>
-                        <h2>Books</h2>
+                        <h2>E-Books</h2>
                     </Col>
                 </Row>
                 <Row className={styles.sortbox}>
@@ -37,10 +35,10 @@ export const BookList = ({className,  ...props}: BookListProps) => {
                     </Col>
                 </Row>
 
-                {books && books.map((book: IBook, i: Key | null | undefined) => 
-                                                <Row className = {styles.book} key={book.id}>
+                {eBooks && eBooks.map((eBook: IEBook, i: Key | null | undefined) => 
+                                                <Row className = {styles.book} key={eBook.id}>
                                                 <Col md = {12}>
-                                                    <BookElement Book={book}  />
+                                                    <EBookElement Book={eBook}  />
                                                 </Col>
                                             </Row>
                     )

@@ -3,7 +3,7 @@ import { TopProps } from "./Top.props";
 import styles from './Top.module.css';
 import cn from 'classnames';
 import { Container, Row, Col } from "react-grid-system";
-import { BookList } from "../BookList/BookList";
+import { BookList } from "../EBookList/EBookList";
 import { Filter } from "../Filter/Filter";
 import { ReactNode, useEffect, useState } from "react";
 import { Console } from "console";

@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const API = createApi({
     reducerPath: 'API',
     baseQuery: fetchBaseQuery({baseUrl: 'https://localhost:7109'}),
-    tagTypes: ['EBook'],
+    tagTypes: ['EBook', 'Book'],
     endpoints: (build) => ({
         fetchAllEBooks: build.query<IEBook[], [number, number]>({
             query: ([limit = 5, offset = 0]) => ({

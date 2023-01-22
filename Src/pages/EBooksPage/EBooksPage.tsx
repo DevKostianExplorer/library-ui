@@ -1,19 +1,19 @@
-import { MainProps } from "./Main.props";
-import styles from './Main.module.css';
+import { EBooksPageProps } from "./EBooksPage.props";
+import styles from './EBooksPage.module.css';
 import cn from 'classnames';
 import { Container, Row, Col } from "react-grid-system";
-import { BookList } from "../BookList/BookList";
-import { Filter } from "../Filter/Filter";
-import { Top } from "../Top/Top";
+import { EBookList } from "../../Components/EBookList/EBookList";
+import { Filter } from "../../Components/Filter/Filter";
+import { Top } from "../../Components/Top/Top";
 
-export const Main = ({className, ...props}: MainProps) => {
+export const EBooksPage = ({className, ...props}: EBooksPageProps) => {
     return(
-        <div className= {cn(styles.navbar, className)} {...props}>
+        <div className= {cn(styles.div, className)} {...props}>
             <Container fluid>
                 <Row>
                     <Col md ={2}></Col>
                     <Col md ={6}>
-                        <BookList></BookList>
+                        <EBookList></EBookList>
                     </Col>
                     <Col md ={2}>
                         <Filter></Filter>

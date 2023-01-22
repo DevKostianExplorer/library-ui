@@ -9,15 +9,9 @@ import { SubmitButton } from "../SubmitButton/SubmitButton";
 import { Button, Form,  FormControlProps} from "react-bootstrap";
 import { authorizationAPI } from "../../services/AuthorizationService";
 import FormControl from "react-bootstrap/lib/FormControl";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/dist/query/fetchBaseQuery";
+import { SerializedError } from "@reduxjs/toolkit";
 
-interface FormElements  extends HTMLFormControlsCollection {
-  formBasicLogin: string,
-  formBasicPassword: string
-}
-
-interface FormElement extends HTMLFormElement {
-  readonly elements: FormElements
-}
 
 export const SingIn = ({className, ...props}: SingInProps) => {
     const [password, setPassword] = useState<string>("");
@@ -29,11 +23,19 @@ export const SingIn = ({className, ...props}: SingInProps) => {
     const handleLogin: ChangeEventHandler<HTMLInputElement> = (event) =>{
       setLogin(event.target.value)
     }
-    const handleSubmit = (event: FormEvent<FormElement>) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       getToken({login, password})
     }
-const [getToken, {}] = authorizationAPI.useGetAccessTokenMutation();
+
+
+const [getToken, {error, isSuccess}] = authorizationAPI.useGetAccessTokenMutation();
+
+useEffect(() => {
+  if(isSuccess){
+    setModal(false)
+  }
+}, [isSuccess])
     return(
         <>
             <NavbarButton className= {cn("singin", className)} onClick={() => setModal(true)} {...props}>Sing in</NavbarButton>
@@ -60,12 +62,34 @@ const [getToken, {}] = authorizationAPI.useGetAccessTokenMutation();
                     <Button variant="success" type="submit">
                       Submit
                     </Button>
+                    {errorParser(error)}
                     
                   </Form>
                   }
-                footer={<Button variant="danger">Cancel</Button>}
+                footer={<Button variant="danger" onClick={() => setModal(false)} >Cancel</Button>}
                 onClose={async () => setModal(false)}
             />
         </>
     )
+}
+
+
+
+const errorParser = (error:FetchBaseQueryError | SerializedError | undefined) => {
+  if (error) {
+    if ('status' in error) {
+      // you can access all properties of `FetchBaseQueryError` here
+
+
+      return (
+        <div>
+          <Form.Label style={{color:"red", marginTop:"5px"}}>{JSON.stringify(error.data) }</Form.Label>
+        </div>
+      )
+    }
+    else {
+        // you can access all properties of `SerializedError` here
+        return <div>{error.message}</div>
+    }
+  }
 }

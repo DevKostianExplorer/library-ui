@@ -1,24 +1,17 @@
 import type { NextPage } from 'next'
 import React from 'react'
-import { Main, Navbar } from '../Components/Export'
+import { Provider } from 'react-redux'
+import { EBooksPage, Navbar } from '../Components/Export'
+import { setupStore } from '../store/store'
 import '../styles/Home.module.css'
 
 
 
 const Home: NextPage = () => {
-
-
-  
-
   return (
-
-      <>
-        <Navbar></Navbar>
-        <Main></Main>
-      </>
-
-
-
+    <>
+      <Navbar></Navbar>
+    </>
   )
 }
 

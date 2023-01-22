@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { BookElementProps } from "./BookElement.props";
-import styles from './BookElement.module.css';
+import { EBookElementProps } from "./EBookElement.props";
+import styles from './EBookElement.module.css';
 import cn from 'classnames';
 import { Container, Row, Col } from "react-grid-system";
 import Star from "./Star.svg"
@@ -12,10 +12,9 @@ import { ILanguage } from "../../store/models/ILanguage";
 import { RootState } from "../../store/store";
 import { attributesAPI } from "../../services/BookAttributesService";
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
 
 
-export const BookElement = ({className, Book,  ...props}: BookElementProps) => {
+export const EBookElement = ({className, Book,  ...props}: EBookElementProps) => {
     const {data: genres} = attributesAPI.useFetchGenresQuery();
     const {data: authors} = attributesAPI.useFetchAuthorsQuery();
     const {data: languages}= attributesAPI.useFetchLanguageQuery();
@@ -23,7 +22,6 @@ export const BookElement = ({className, Book,  ...props}: BookElementProps) => {
     const genre = useMemo(() => genres && genres.filter((genre) => Book.genreId.includes(genre.id)), [Book.genreId, genres])
     const language = useMemo(() => languages && languages.find((language) => language.id == Book.languageId), [languages, Book.languageId])
     return(
-        <Link to = {"Book/" + Book.id}>
         <div  {...props}>
             
                 <Row className= {cn(styles.bookelement, className)}>
@@ -49,21 +47,27 @@ export const BookElement = ({className, Book,  ...props}: BookElementProps) => {
                         <Row >
                             <p className = {styles.description}>{Book.description}</p>
                         </Row>
-                        <Row >
-                            <p className = {styles.description}>Available: {Book.numberAvailable}/{Book.number}</p>
+                        <Row className = {styles.count}>
+                            <Col md = {2}>
+                                <span className={styles.countdownloads}>{Book.download}</span>
+                                
+                            </Col>
+                            <Col md = {2}>
+                                <span className={styles.countviews}>{Book.views}</span>
+                                
+                            </Col>
                         </Row>
-
                         
                     </Col>
                     <Col md ={3} className = {styles.rating}>
-
+                        <span className = {styles.star}>Rating: {Book.rating}</span>
 
                     </Col>
-                </Row>
-            
+                    </Row>
+                        
+
 
         </div>
-        </Link>
     )
 }
 
