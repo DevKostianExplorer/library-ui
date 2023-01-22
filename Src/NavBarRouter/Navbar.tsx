@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { EBooksPage } from "../pages/EBooksPage/EBooksPage";
 import { BooksPage } from "../pages/BooksPage/BooksPage";
 import { BookPage } from "../pages/BookPage/BookPage";
+import { EBookPage } from "../pages/EBookPage/EBookPage";
 
 
 export const Navbar = ({className, ...props}: NavbarProps) => {
@@ -27,7 +28,7 @@ export const Navbar = ({className, ...props}: NavbarProps) => {
                 <Row>
                     <Col md ={2}></Col>
                     <Col md ={1}>
-                        <img className={styles.img} alt = {"logo"} src = {"logo.png"}></img>
+                        <img className={styles.img} alt = {"logo"} src = {"/logo.png"}></img>
                     </Col>
                     <Col md = {1}>
                         <StyledLink className="ordinary" to = "/">Books</StyledLink>
@@ -60,6 +61,7 @@ export const Navbar = ({className, ...props}: NavbarProps) => {
             <Route index path="/" element={<BooksPage />}></Route>
             <Route index path="/EBooks" element={<EBooksPage />}></Route>
             <Route path="/Book/:id" element={<BookPage />}></Route>
+            <Route path="/EBooks/EBook/:id" element={<EBookPage />}></Route>
         </Routes>
         </div>
 
