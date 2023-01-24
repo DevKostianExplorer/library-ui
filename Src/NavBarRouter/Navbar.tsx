@@ -16,6 +16,8 @@ import { EBooksPage } from "../pages/EBooksPage/EBooksPage";
 import { BooksPage } from "../pages/BooksPage/BooksPage";
 import { BookPage } from "../pages/BookPage/BookPage";
 import { EBookPage } from "../pages/EBookPage/EBookPage";
+import { UsersPage } from "../pages/UsersPage/UsersPage";
+import { NewBookPage } from "../pages/NewBookPage/NewBookPage";
 
 
 export const Navbar = ({className, ...props}: NavbarProps) => {
@@ -62,6 +64,8 @@ export const Navbar = ({className, ...props}: NavbarProps) => {
             <Route index path="/EBooks" element={<EBooksPage />}></Route>
             <Route path="/Book/:id" element={<BookPage />}></Route>
             <Route path="/EBooks/EBook/:id" element={<EBookPage />}></Route>
+            <Route path="/Users" element={<UsersPage />}></Route>
+            <Route path="/NewBook" element={<NewBookPage />}></Route>
         </Routes>
         </div>
 

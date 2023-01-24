@@ -3,15 +3,9 @@ import { TopProps } from "./Top.props";
 import styles from './Top.module.css';
 import cn from 'classnames';
 import { Container, Row, Col } from "react-grid-system";
-import { BookList } from "../EBookList/EBookList";
-import { Filter } from "../Filter/Filter";
-import { ReactNode, useEffect, useState } from "react";
-import { Console } from "console";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import { ToggleButton, ToggleButtonGroup } from "react-bootstrap";
-import { fetchTopEBooks } from "../../store/features/topEBookSlice";
 import { ITopEBook } from "../../store/models/ITopEBook";
-import { RootState } from "../../store/store";
 import { topEBookAPI } from "../../services/TopEBookService";
 
 export const Top = ({ className, ...props }: TopProps) => {
